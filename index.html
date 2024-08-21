@@ -822,10 +822,19 @@
             </tr>
 
         </table>
+<center>
+        <button id="load-more-btn">Click to add more</button>
+</center>
 
-        <button id="load-more-btn">点击加载更多</button>
 
-        
+<tr>
+    <td class="table-sub-title">test</td>
+    <td class="table-sub-title">Huntsville</td>
+    <td class="table-sub-title">225,564</td>
+    <td class="table-sub-title">1.6%</td>
+</tr>
+
+
     </div>            
 
     <div class="footer">
@@ -845,7 +854,31 @@
 
 <div class="bottom-deco"></div>
 
+<script>
+    // 定义更多的表格数据
+    const moreData = `
+        <tr>
+            <td class="table-sub-title">101</td>
+            <td class="table-sub-title">Another City</td>
+            <td class="table-sub-title">123,456</td>
+            <td class="table-sub-title">2.0%</td>
+        </tr>
+        <tr>
+            <td class="table-sub-title">102</td>
+            <td class="table-sub-title">Yet Another City</td>
+            <td class="table-sub-title">98,765</td>
+            <td class="table-sub-title">3.1%</td>
+        </tr>
+    `;
 
+    // 监听按钮点击事件
+    document.getElementById('load-more-btn').addEventListener('click', function() {
+        // 将更多的数据添加到表格中
+        document.getElementById('table-body').insertAdjacentHTML('beforeend', moreData);
+        // 隐藏加载更多按钮
+        this.style.display = 'none';
+    });
+</script>
 
 </body>
 </html>
